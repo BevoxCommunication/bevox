@@ -3,116 +3,328 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agenzia di Comunicazione e Marketing</title>
-  <meta name="description" content="Landing page di un'agenzia di comunicazione e marketing.">
+  <title>Esempio Landing Page Esaustiva</title>
+  <meta name="description" content="Landing page di esempio per un'agenzia di comunicazione e marketing, con molte sezioni e strutture HTML." />
   
-  <!-- Collega il tuo file CSS principale -->
+  <!-- Collegamento a un eventuale file CSS esterno (lo creeremo/aggiorneremo dopo) -->
   <link rel="stylesheet" href="css/main.css" />
   
-  <!-- (Opzionale) Se vuoi usare Tailwind via CDN, rimuovi il commento:
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3/dist/tailwind.min.css" rel="stylesheet">
+  <!-- (Opzionale) Se vuoi usare un'icona personalizzata, ecco come potresti inserire la favicon
+  <link rel="icon" href="images/favicon.png" type="image/png" /> 
   -->
 </head>
-
 <body>
-  <!-- HEADER: Logo e, se serve, menu di navigazione -->
-  <header>
-    <div class="logo">
-      <!-- Inserisci qui il tuo logo (come testo o immagine) -->
-      <h1>Nome Agenzia</h1>
+  <!-- HEADER con logo e NAV -->
+  <header role="banner">
+    <div class="container">
+      <div class="logo-area">
+        <!-- Esempio di logo: testo o immagine -->
+        <a href="#">
+          <img src="images/logo-agenzia.png" alt="Logo Agenzia" style="max-height: 60px;">
+        </a>
+        <h1>Nome Agenzia</h1>
+      </div>
+      <nav aria-label="Navigazione principale">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">Chi Siamo</a></li>
+          <li><a href="#services">Servizi</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#testimonials">Testimonianze</a></li>
+          <li><a href="#contact">Contatti</a></li>
+        </ul>
+      </nav>
     </div>
-    <!-- Se preferisci, puoi aggiungere un menu semplice con ancore ai vari ID delle sezioni -->
-    <!--
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Servizi</a></li>
-        <li><a href="#team">Chi Siamo</a></li>
-        <li><a href="#contact">Contatti</a></li>
-      </ul>
-    </nav>
-    -->
   </header>
+  
+  <!-- MAIN: Contenuto principale -->
+  <main role="main">
+    <!-- HERO SECTION -->
+    <section id="hero" aria-label="Sezione Hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Trasforma la tua Visione in Realtà</h2>
+          <p>
+            Con <strong>Nome Agenzia</strong> potenzi il tuo brand, crei strategie di marketing vincenti e 
+            raggiungi più clienti in meno tempo.  
+            Scopri i nostri servizi e contattaci per una consulenza personalizzata.
+          </p>
+          <a href="#contact" class="cta-button">Richiedi un Preventivo</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- HERO SECTION: messaggio principale + call-to-action -->
-  <section id="hero">
-    <div class="hero-content">
-      <h2>Agenzia di Comunicazione e Marketing</h2>
-      <p>Aiutiamo il tuo brand a crescere con strategie e creatività su misura.</p>
-      <a href="#contact" class="cta-button">Contattaci Ora</a>
-    </div>
-  </section>
+    <!-- ABOUT SECTION -->
+    <section id="about" aria-label="Sezione Chi Siamo">
+      <div class="container">
+        <h3>Chi Siamo</h3>
+        <p>
+          Siamo un'agenzia di comunicazione e marketing con sede a <em>Milano</em>, specializzata in soluzioni 
+          digitali e tradizionali. Il nostro team unisce competenze multidisciplinari in 
+          <strong>branding, advertising, PR e social media management</strong>.
+        </p>
+        <p>
+          Crediamo che ogni brand abbia una storia da raccontare: il nostro compito è creare la giusta 
+          strategia per far emergere la tua unicità. Collaboriamo con aziende di ogni dimensione, 
+          dalle startup alle multinazionali.
+        </p>
+        <!-- Esempio di un video introduttivo (opzionale) -->
+        <!--
+        <video controls width="600">
+          <source src="video/intro-agenzia.mp4" type="video/mp4" />
+          Il tuo browser non supporta il video HTML5.
+        </video>
+        -->
+      </div>
+    </section>
 
-  <!-- SERVIZI: descrizione rapida di ciò che offri -->
-  <section id="services">
-    <h3>I nostri servizi</h3>
-    <div class="service-list">
-      <article class="service">
-        <h4>Branding</h4>
-        <p>Costruiamo la tua identità visiva e strategica per distinguerti sul mercato.</p>
-      </article>
-      <article class="service">
-        <h4>Social Media</h4>
-        <p>Gestione e strategie su misura per social network, per aumentare visibilità e engagement.</p>
-      </article>
-      <article class="service">
-        <h4>Advertising</h4>
-        <p>Campagne pubblicitarie online e offline per raggiungere i tuoi obiettivi di vendita.</p>
-      </article>
-      <!-- Aggiungi o rimuovi servizi in base alle tue esigenze -->
-    </div>
-  </section>
+    <!-- SERVIZI SECTION -->
+    <section id="services" aria-label="Sezione Servizi">
+      <div class="container">
+        <h3>I Nostri Servizi</h3>
+        <p>
+          Offriamo una gamma completa di servizi per coprire ogni aspetto della comunicazione: dalla 
+          pianificazione strategica fino all'analisi dei risultati.
+        </p>
+        
+        <div class="service-grid">
+          <article class="service-item">
+            <img src="images/service-branding.jpg" alt="Esempio di Branding">
+            <h4>Branding & Identità</h4>
+            <p>
+              Creazione di loghi, naming, immagine coordinata e storytelling per dare al tuo 
+              business un'identità distintiva e memorabile.
+            </p>
+          </article>
 
-  <!-- TEAM: breve presentazione del tuo staff, se utile -->
-  <section id="team">
-    <h3>Chi siamo</h3>
-    <div class="team-grid">
-      <article class="team-member">
-        <img src="images/member1.jpg" alt="Foto della persona 1">
-        <h4>Nome Persona 1</h4>
-        <p>Ruolo / Titolo</p>
-      </article>
-      <article class="team-member">
-        <img src="images/member2.jpg" alt="Foto della persona 2">
-        <h4>Nome Persona 2</h4>
-        <p>Ruolo / Titolo</p>
-      </article>
-      <!-- Aggiungi altri membri come desideri -->
-    </div>
-  </section>
+          <article class="service-item">
+            <img src="images/service-social.jpg" alt="Esempio di gestione Social Media">
+            <h4>Social Media Management</h4>
+            <p>
+              Piani editoriali su misura, crescita organica e campagne a pagamento su Facebook, 
+              Instagram, LinkedIn e altre piattaforme.
+            </p>
+          </article>
 
-  <!-- CONTATTI: form o recapiti per essere contattati -->
-  <section id="contact">
-    <h3>Contattaci</h3>
-    <p>Scrivici per una consulenza o un preventivo gratuito.</p>
-    <form action="#" method="POST">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required>
+          <article class="service-item">
+            <img src="images/service-ads.jpg" alt="Esempio di Advertising Online">
+            <h4>Advertising Online</h4>
+            <p>
+              Google Ads, Facebook Ads, e promozioni cross-platform per aumentare vendite e 
+              visibilità in modo misurabile e scalabile.
+            </p>
+          </article>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+          <article class="service-item">
+            <img src="images/service-seo.jpg" alt="Esempio di SEO">
+            <h4>SEO & Content Marketing</h4>
+            <p>
+              Ottimizzazione per i motori di ricerca e creazione di contenuti di qualità, per 
+              attrarre nuovi clienti e consolidare la tua autorevolezza online.
+            </p>
+          </article>
 
-      <label for="message">Messaggio:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+          <article class="service-item">
+            <img src="images/service-events.jpg" alt="Esempio di Eventi e PR">
+            <h4>Eventi & PR</h4>
+            <p>
+              Organizzazione di eventi, press day, influencer marketing e gestione relazioni con i media: 
+              facciamo parlare di te nei posti giusti.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <button type="submit">Invia</button>
-    </form>
-    <!-- In alternativa, puoi inserire un link mailto o i tuoi recapiti -->
-  </section>
+    <!-- TEAM SECTION -->
+    <section id="team" aria-label="Sezione Team">
+      <div class="container">
+        <h3>Il Nostro Team</h3>
+        <p>
+          Siamo un gruppo di professionisti appassionati, ognuno con competenze specifiche per 
+          coprire ogni fase del processo creativo e strategico.
+        </p>
+        
+        <div class="team-grid">
+          <article class="team-member">
+            <img src="images/member1.jpg" alt="Foto di Mario Rossi">
+            <h4>Mario Rossi</h4>
+            <p>Direttore Creativo</p>
+            <p>
+              Esperto in branding e grafica pubblicitaria, Mario guida il reparto creativo 
+              per offrire soluzioni innovative.
+            </p>
+          </article>
 
-  <!-- FOOTER: info legali, copyright, eventuali social link -->
-  <footer>
-    <p>&copy; 2025 Nome Agenzia. Tutti i diritti riservati.</p>
-    <!-- Se vuoi, aggiungi link ai social:
-    <div class="social-links">
-      <a href="https://facebook.com">Facebook</a>
-      <a href="https://instagram.com">Instagram</a>
-      <a href="https://linkedin.com">LinkedIn</a>
-    </div>
+          <article class="team-member">
+            <img src="images/member2.jpg" alt="Foto di Laura Bianchi">
+            <h4>Laura Bianchi</h4>
+            <p>Social Media Strategist</p>
+            <p>
+              Specializzata in strategia social, Laura ottimizza i contenuti per ottenere 
+              massima visibilità e coinvolgimento.
+            </p>
+          </article>
+
+          <article class="team-member">
+            <img src="images/member3.jpg" alt="Foto di Alessandro Verdi">
+            <h4>Alessandro Verdi</h4>
+            <p>Account Manager</p>
+            <p>
+              Punto di riferimento per i clienti, gestisce progetti e relazioni, assicurando 
+              che gli obiettivi siano sempre raggiunti.
+            </p>
+          </article>
+
+          <article class="team-member">
+            <img src="images/member4.jpg" alt="Foto di Serena Neri">
+            <h4>Serena Neri</h4>
+            <p>SEO Specialist</p>
+            <p>
+              Analisi tecnica e contenutistica, Serena si occupa di migliorare il 
+              posizionamento sui motori di ricerca e la visibilità organica.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" aria-label="Sezione Testimonianze">
+      <div class="container">
+        <h3>Cosa Dicono di Noi</h3>
+        
+        <div class="testimonials-wrapper">
+          <blockquote>
+            <p>
+              “Collaborare con Nome Agenzia è stata una rivoluzione. Abbiamo visto un incremento 
+              delle vendite del 30% in pochi mesi!”
+            </p>
+            <cite>– Gianni P. (CEO, XYZ Srl)</cite>
+          </blockquote>
+
+          <blockquote>
+            <p>
+              “Team professionale e disponibile: hanno risolto i nostri problemi di brand identity 
+              e ci hanno guidato verso scelte vincenti.”
+            </p>
+            <cite>– Angela F. (Responsabile Marketing, TechCo)</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- (OPZIONALE) PARTNERS SECTION -->
+    <section id="partners" aria-label="Sezione Partners">
+      <div class="container">
+        <h3>I Nostri Partners</h3>
+        <p>Collaboriamo con aziende e professionisti di diverse industrie, creando un network di eccellenza.</p>
+        <div class="partners-list">
+          <img src="images/logo-partner1.png" alt="Logo Partner 1">
+          <img src="images/logo-partner2.png" alt="Logo Partner 2">
+          <img src="images/logo-partner3.png" alt="Logo Partner 3">
+          <img src="images/logo-partner4.png" alt="Logo Partner 4">
+          <!-- Aggiungi o rimuovi loghi a piacere -->
+        </div>
+      </div>
+    </section>
+
+    <!-- (OPZIONALE) FAQ SECTION -->
+    <section id="faqs" aria-label="Sezione FAQ">
+      <div class="container">
+        <h3>Domande Frequenti</h3>
+        <article class="faq-item">
+          <h4>1. Come posso richiedere un preventivo?</h4>
+          <p>
+            Puoi utilizzare il <a href="#contact">modulo di contatto</a> qui sotto oppure inviarci 
+            una mail a <a href="mailto:info@nomeagenzia.com">info@nomeagenzia.com</a>.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h4>2. Offrite servizi di consulenza a distanza?</h4>
+          <p>
+            Sì, lavoriamo con clienti in tutta Italia (e all’estero) organizzando meeting via Zoom 
+            o Microsoft Teams.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h4>3. Quali sono i tempi di realizzazione di un progetto?</h4>
+          <p>
+            Dipende dalla complessità. In media, per un progetto di branding completo servono 
+            4-6 settimane. Per un piano social, 2-3 settimane di setup.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" aria-label="Sezione Contatti">
+      <div class="container">
+        <h3>Contattaci</h3>
+        <p>
+          Vuoi sapere come possiamo aiutarti a raggiungere i tuoi obiettivi?  
+          Compila il form o scrivici a <a href="mailto:info@nomeagenzia.com">info@nomeagenzia.com</a>.
+        </p>
+        
+        <form action="#" method="POST">
+          <fieldset>
+            <legend>Modulo di contatto</legend>
+            
+            <label for="full-name">Nome Completo:</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Mario Rossi" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="esempio@mail.com" required />
+
+            <label for="phone">Telefono (opzionale):</label>
+            <input type="tel" id="phone" name="phone" placeholder="+39 123 4567890" />
+
+            <label for="message">Messaggio:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Scrivi qui la tua richiesta..." required></textarea>
+
+            <button type="submit">Invia</button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <!-- (OPZIONALE) MAP SECTION (ad esempio con Google Maps embed) -->
+    <!--
+    <section id="map" aria-label="Mappa della nostra sede">
+      <div class="container">
+        <h3>Dove Siamo</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?..."
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
     -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 Nome Agenzia. Tutti i diritti riservati.</p>
+      <p>
+        Sede Legale: Via Example, 10 - 20100 Milano (MI) - P.IVA 12345678901  
+        | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a>
+      </p>
+      <!-- Social links -->
+      <div class="social-links">
+        <a href="https://facebook.com/agenzia" target="_blank">Facebook</a>
+        <a href="https://instagram.com/agenzia" target="_blank">Instagram</a>
+        <a href="https://linkedin.com/company/agenzia" target="_blank">LinkedIn</a>
+      </div>
+    </div>
   </footer>
 
-  <!-- (Opzionale) File JS se hai script particolari -->
+  <!-- File JS se necessario -->
   <script src="js/main.js"></script>
 </body>
 </html>
