@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenzia di Comunicazione e Marketing</title>
+  <meta name="description" content="Landing page di un'agenzia di comunicazione e marketing.">
+  
+  <!-- Collega il tuo file CSS principale -->
+  <link rel="stylesheet" href="css/main.css" />
+  
+  <!-- (Opzionale) Se vuoi usare Tailwind via CDN, rimuovi il commento:
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3/dist/tailwind.min.css" rel="stylesheet">
+  -->
+</head>
+
+<body>
+  <!-- HEADER: Logo e, se serve, menu di navigazione -->
+  <header>
+    <div class="logo">
+      <!-- Inserisci qui il tuo logo (come testo o immagine) -->
+      <h1>Nome Agenzia</h1>
+    </div>
+    <!-- Se preferisci, puoi aggiungere un menu semplice con ancore ai vari ID delle sezioni -->
+    <!--
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Servizi</a></li>
+        <li><a href="#team">Chi Siamo</a></li>
+        <li><a href="#contact">Contatti</a></li>
+      </ul>
+    </nav>
+    -->
+  </header>
+
+  <!-- HERO SECTION: messaggio principale + call-to-action -->
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Agenzia di Comunicazione e Marketing</h2>
+      <p>Aiutiamo il tuo brand a crescere con strategie e creatività su misura.</p>
+      <a href="#contact" class="cta-button">Contattaci Ora</a>
+    </div>
+  </section>
+
+  <!-- SERVIZI: descrizione rapida di ciò che offri -->
+  <section id="services">
+    <h3>I nostri servizi</h3>
+    <div class="service-list">
+      <article class="service">
+        <h4>Branding</h4>
+        <p>Costruiamo la tua identità visiva e strategica per distinguerti sul mercato.</p>
+      </article>
+      <article class="service">
+        <h4>Social Media</h4>
+        <p>Gestione e strategie su misura per social network, per aumentare visibilità e engagement.</p>
+      </article>
+      <article class="service">
+        <h4>Advertising</h4>
+        <p>Campagne pubblicitarie online e offline per raggiungere i tuoi obiettivi di vendita.</p>
+      </article>
+      <!-- Aggiungi o rimuovi servizi in base alle tue esigenze -->
+    </div>
+  </section>
+
+  <!-- TEAM: breve presentazione del tuo staff, se utile -->
+  <section id="team">
+    <h3>Chi siamo</h3>
+    <div class="team-grid">
+      <article class="team-member">
+        <img src="images/member1.jpg" alt="Foto della persona 1">
+        <h4>Nome Persona 1</h4>
+        <p>Ruolo / Titolo</p>
+      </article>
+      <article class="team-member">
+        <img src="images/member2.jpg" alt="Foto della persona 2">
+        <h4>Nome Persona 2</h4>
+        <p>Ruolo / Titolo</p>
+      </article>
+      <!-- Aggiungi altri membri come desideri -->
+    </div>
+  </section>
+
+  <!-- CONTATTI: form o recapiti per essere contattati -->
+  <section id="contact">
+    <h3>Contattaci</h3>
+    <p>Scrivici per una consulenza o un preventivo gratuito.</p>
+    <form action="#" method="POST">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Messaggio:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Invia</button>
+    </form>
+    <!-- In alternativa, puoi inserire un link mailto o i tuoi recapiti -->
+  </section>
+
+  <!-- FOOTER: info legali, copyright, eventuali social link -->
+  <footer>
+    <p>&copy; 2025 Nome Agenzia. Tutti i diritti riservati.</p>
+    <!-- Se vuoi, aggiungi link ai social:
+    <div class="social-links">
+      <a href="https://facebook.com">Facebook</a>
+      <a href="https://instagram.com">Instagram</a>
+      <a href="https://linkedin.com">LinkedIn</a>
+    </div>
+    -->
+  </footer>
+
+  <!-- (Opzionale) File JS se hai script particolari -->
+  <script src="js/main.js"></script>
+</body>
+</html>
