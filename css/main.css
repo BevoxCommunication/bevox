@@ -327,4 +327,10 @@
   .social-links a:hover {
     color: #005bb7;
   }
+
+  #intro {
+    background-image: url("images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+  }
   

@@ -1,330 +1,410 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esempio Landing Page Esaustiva</title>
-  <meta name="description" content="Landing page di esempio per un'agenzia di comunicazione e marketing, con molte sezioni e strutture HTML." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeVox - Comunicazione Efficace</title>
+  <meta name="description" content="BeVox: Azienda specializzata in comunicazione e servizi dedicati, per facilitare la connessione tra aziende e potenziali clienti.">
   
-  <!-- Collegamento a un eventuale file CSS esterno (lo creeremo/aggiorneremo dopo) -->
-  <link rel="stylesheet" href="css/main.css" />
-  
-  <!-- (Opzionale) Se vuoi usare un'icona personalizzata, ecco come potresti inserire la favicon
-  <link rel="icon" href="images/favicon.png" type="image/png" /> 
-  -->
+  <!-- Tailwind CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@3/dist/tailwind.min.css" 
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome (per icone) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  >
+
+  <!-- Il tuo file CSS personalizzato -->
+  <link rel="stylesheet" href="css/main.css">
+
 </head>
-<body>
-  <!-- HEADER con logo e NAV -->
-  <header role="banner">
-    <div class="container">
-      <div class="logo-area">
-        <!-- Esempio di logo: testo o immagine -->
-        <a href="#">
-          <img src="images/logo-agenzia.png" alt="Logo Agenzia" style="max-height: 60px;">
-        </a>
-        <h1>Nome Agenzia</h1>
+<body class="text-gray-800 bg-gray-50 leading-relaxed">
+
+  <!-- HEADER -->
+  <header class="w-full bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      
+      <!-- LOGO + TITOLO BRAND (vicini fra loro) -->
+      <div class="flex items-center space-x-2">
+        <!-- Logo più piccolo -->
+        <img 
+          src="images/logo-bevox.png" 
+          alt="Logo BeVox" 
+          class="h-8 w-auto object-contain"
+        >
+        <!-- Titolo vicino al logo -->
+        <h1 class="text-xl font-bold text-gray-800">BeVox</h1>
       </div>
-      <nav aria-label="Navigazione principale">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">Chi Siamo</a></li>
-          <li><a href="#services">Servizi</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#testimonials">Testimonianze</a></li>
-          <li><a href="#contact">Contatti</a></li>
-        </ul>
-      </nav>
+      
+      <!-- NAV + CTA -->
+      <div class="flex items-center space-x-6">
+        <!-- MENU orizzontale -->
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li>
+              <a href="#intro" class="text-gray-600 hover:text-pink-500 transition">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#vision-mission" class="text-gray-600 hover:text-pink-500 transition">
+                Vision &amp; Mission
+              </a>
+            </li>
+            <li>
+              <a href="#prodotti-servizi" class="text-gray-600 hover:text-pink-500 transition">
+                Servizi
+              </a>
+            </li>
+            <li>
+              <a href="#contatti" class="text-gray-600 hover:text-pink-500 transition">
+                Contatti
+              </a>
+            </li>
+          </ul>
+        </nav>
+  
+        <!-- CTA in gradiente (colori adattati, gradiente rosa → arancio più “soft”) -->
+        <a 
+          href="#contatti"
+          class="inline-block bg-gradient-to-r from-pink-500 to-orange-400 
+                 text-white font-semibold px-5 py-2 rounded-md 
+                 hover:opacity-90 transition"
+        >
+          Contattaci
+        </a>
+      </div>
+  
     </div>
   </header>
   
-  <!-- MAIN: Contenuto principale -->
-  <main role="main">
-    <!-- HERO SECTION -->
-    <section id="hero" aria-label="Sezione Hero">
-      <div class="container">
-        <div class="hero-content">
-          <h2>Trasforma la tua Visione in Realtà</h2>
-          <p>
-            Con <strong>Nome Agenzia</strong> potenzi il tuo brand, crei strategie di marketing vincenti e 
-            raggiungi più clienti in meno tempo.  
-            Scopri i nostri servizi e contattaci per una consulenza personalizzata.
-          </p>
-          <a href="#contact" class="cta-button">Richiedi un Preventivo</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" aria-label="Sezione Chi Siamo">
-      <div class="container">
-        <h3>Chi Siamo</h3>
-        <p>
-          Siamo un'agenzia di comunicazione e marketing con sede a <em>Milano</em>, specializzata in soluzioni 
-          digitali e tradizionali. Il nostro team unisce competenze multidisciplinari in 
-          <strong>branding, advertising, PR e social media management</strong>.
-        </p>
-        <p>
-          Crediamo che ogni brand abbia una storia da raccontare: il nostro compito è creare la giusta 
-          strategia per far emergere la tua unicità. Collaboriamo con aziende di ogni dimensione, 
-          dalle startup alle multinazionali.
-        </p>
-        <!-- Esempio di un video introduttivo (opzionale) -->
-        <!--
-        <video controls width="600">
-          <source src="video/intro-agenzia.mp4" type="video/mp4" />
-          Il tuo browser non supporta il video HTML5.
-        </video>
+  <!-- MAIN CONTENT -->
+  <main class="mt-6">
+
+    <!-- INTRO / HERO SECTION -->
+    <section 
+      id="intro" 
+      class="bg-blue-50 py-12 relative"
+      style="
+        /* Esempio di gradiente orizzontale se volessi un tocco più 'Farno-like':
+        background: linear-gradient(90deg, #ffffff 50%, #fff5f9 100%);
+        */
+      "
+    >
+      <div class="container mx-auto px-4">
+        
+        <!-- Puoi inserire un'immagine di background qui (opzionale) 
+             con absolute positioning o via CSS, ad es. in main.css:
+             #intro { background-image: url('images/hero-bg.jpg'); ... } 
         -->
-      </div>
-    </section>
 
-    <!-- SERVIZI SECTION -->
-    <section id="services" aria-label="Sezione Servizi">
-      <div class="container">
-        <h3>I Nostri Servizi</h3>
-        <p>
-          Offriamo una gamma completa di servizi per coprire ogni aspetto della comunicazione: dalla 
-          pianificazione strategica fino all'analisi dei risultati.
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">Comunicazione Efficace</h2>
+        <p class="text-xl text-blue-600 font-semibold">Per Facilitare Le Connessioni</p>
+        <p class="text-md italic text-gray-700 mt-2 mb-6">La Voce Del Tuo Successo</p>
+
+        <p class="max-w-3xl text-gray-700 mb-6">
+          <strong class="text-blue-700">BeVox</strong> è un'azienda specializzata in comunicazione e servizi chiamata personalizzati.
+          Mette a disposizione risorse dedicate per facilitare la connessione tra le aziende e i loro potenziali clienti,
+          offrendo un servizio su misura per ogni esigenza.
         </p>
+
+        <!-- Esempio di CTA -->
+        <div>
+          <a 
+            href="#contatti"
+            class="inline-block bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-md hover:opacity-90 transition"
+          >
+            Contattaci Ora
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION & MISSION -->
+    <section id="vision-mission" class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">La Nostra Vision & La Nostra Mission</h2>
         
-        <div class="service-grid">
-          <article class="service-item">
-            <img src="images/service-branding.jpg" alt="Esempio di Branding">
-            <h4>Branding & Identità</h4>
-            <p>
-              Creazione di loghi, naming, immagine coordinata e storytelling per dare al tuo 
-              business un'identità distintiva e memorabile.
-            </p>
-          </article>
-
-          <article class="service-item">
-            <img src="images/service-social.jpg" alt="Esempio di gestione Social Media">
-            <h4>Social Media Management</h4>
-            <p>
-              Piani editoriali su misura, crescita organica e campagne a pagamento su Facebook, 
-              Instagram, LinkedIn e altre piattaforme.
-            </p>
-          </article>
-
-          <article class="service-item">
-            <img src="images/service-ads.jpg" alt="Esempio di Advertising Online">
-            <h4>Advertising Online</h4>
-            <p>
-              Google Ads, Facebook Ads, e promozioni cross-platform per aumentare vendite e 
-              visibilità in modo misurabile e scalabile.
-            </p>
-          </article>
-
-          <article class="service-item">
-            <img src="images/service-seo.jpg" alt="Esempio di SEO">
-            <h4>SEO & Content Marketing</h4>
-            <p>
-              Ottimizzazione per i motori di ricerca e creazione di contenuti di qualità, per 
-              attrarre nuovi clienti e consolidare la tua autorevolezza online.
-            </p>
-          </article>
-
-          <article class="service-item">
-            <img src="images/service-events.jpg" alt="Esempio di Eventi e PR">
-            <h4>Eventi & PR</h4>
-            <p>
-              Organizzazione di eventi, press day, influencer marketing e gestione relazioni con i media: 
-              facciamo parlare di te nei posti giusti.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM SECTION -->
-    <section id="team" aria-label="Sezione Team">
-      <div class="container">
-        <h3>Il Nostro Team</h3>
-        <p>
-          Siamo un gruppo di professionisti appassionati, ognuno con competenze specifiche per 
-          coprire ogni fase del processo creativo e strategico.
-        </p>
-        
-        <div class="team-grid">
-          <article class="team-member">
-            <img src="images/member1.jpg" alt="Foto di Mario Rossi">
-            <h4>Mario Rossi</h4>
-            <p>Direttore Creativo</p>
-            <p>
-              Esperto in branding e grafica pubblicitaria, Mario guida il reparto creativo 
-              per offrire soluzioni innovative.
-            </p>
-          </article>
-
-          <article class="team-member">
-            <img src="images/member2.jpg" alt="Foto di Laura Bianchi">
-            <h4>Laura Bianchi</h4>
-            <p>Social Media Strategist</p>
-            <p>
-              Specializzata in strategia social, Laura ottimizza i contenuti per ottenere 
-              massima visibilità e coinvolgimento.
-            </p>
-          </article>
-
-          <article class="team-member">
-            <img src="images/member3.jpg" alt="Foto di Alessandro Verdi">
-            <h4>Alessandro Verdi</h4>
-            <p>Account Manager</p>
-            <p>
-              Punto di riferimento per i clienti, gestisce progetti e relazioni, assicurando 
-              che gli obiettivi siano sempre raggiunti.
-            </p>
-          </article>
-
-          <article class="team-member">
-            <img src="images/member4.jpg" alt="Foto di Serena Neri">
-            <h4>Serena Neri</h4>
-            <p>SEO Specialist</p>
-            <p>
-              Analisi tecnica e contenutistica, Serena si occupa di migliorare il 
-              posizionamento sui motori di ricerca e la visibilità organica.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonials" aria-label="Sezione Testimonianze">
-      <div class="container">
-        <h3>Cosa Dicono di Noi</h3>
-        
-        <div class="testimonials-wrapper">
-          <blockquote>
-            <p>
-              “Collaborare con Nome Agenzia è stata una rivoluzione. Abbiamo visto un incremento 
-              delle vendite del 30% in pochi mesi!”
-            </p>
-            <cite>– Gianni P. (CEO, XYZ Srl)</cite>
-          </blockquote>
-
-          <blockquote>
-            <p>
-              “Team professionale e disponibile: hanno risolto i nostri problemi di brand identity 
-              e ci hanno guidato verso scelte vincenti.”
-            </p>
-            <cite>– Angela F. (Responsabile Marketing, TechCo)</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- (OPZIONALE) PARTNERS SECTION -->
-    <section id="partners" aria-label="Sezione Partners">
-      <div class="container">
-        <h3>I Nostri Partners</h3>
-        <p>Collaboriamo con aziende e professionisti di diverse industrie, creando un network di eccellenza.</p>
-        <div class="partners-list">
-          <img src="images/logo-partner1.png" alt="Logo Partner 1">
-          <img src="images/logo-partner2.png" alt="Logo Partner 2">
-          <img src="images/logo-partner3.png" alt="Logo Partner 3">
-          <img src="images/logo-partner4.png" alt="Logo Partner 4">
-          <!-- Aggiungi o rimuovi loghi a piacere -->
-        </div>
-      </div>
-    </section>
-
-    <!-- (OPZIONALE) FAQ SECTION -->
-    <section id="faqs" aria-label="Sezione FAQ">
-      <div class="container">
-        <h3>Domande Frequenti</h3>
-        <article class="faq-item">
-          <h4>1. Come posso richiedere un preventivo?</h4>
-          <p>
-            Puoi utilizzare il <a href="#contact">modulo di contatto</a> qui sotto oppure inviarci 
-            una mail a <a href="mailto:info@nomeagenzia.com">info@nomeagenzia.com</a>.
+        <article class="mb-8">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">
+            <i class="fas fa-bullseye text-pink-500 mr-2"></i> La Nostra Vision
+          </h3>
+          <p class="text-gray-700 mb-4">
+            BeVox cura ogni giorno la propria comunicazione, per poter essere la voce sulla quale contare per la tua attività.  
+            Crediamo che ogni interazione debba essere più di una semplice chiamata. Deve essere un’opportunità per costruire fiducia, 
+            comunicare in modo chiaro ed efficace per portare risultati concreti per tutti.
+          </p>
+          <p class="text-gray-700">
+            Il nostro intento è di creare abbondanza attraverso connessioni autentiche e di valore tra le aziende e i loro clienti.
           </p>
         </article>
-        <article class="faq-item">
-          <h4>2. Offrite servizi di consulenza a distanza?</h4>
-          <p>
-            Sì, lavoriamo con clienti in tutta Italia (e all’estero) organizzando meeting via Zoom 
-            o Microsoft Teams.
-          </p>
-        </article>
-        <article class="faq-item">
-          <h4>3. Quali sono i tempi di realizzazione di un progetto?</h4>
-          <p>
-            Dipende dalla complessità. In media, per un progetto di branding completo servono 
-            4-6 settimane. Per un piano social, 2-3 settimane di setup.
+
+        <article>
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">
+            <i class="fas fa-bullhorn text-orange-500 mr-2"></i> La Nostra Mission
+          </h3>
+          <p class="text-gray-700">
+            La nostra missione è dare voce alla tua attività, aiutandoti a crescere per raggiungere nuovi traguardi.
+            Perché i tuoi traguardi sono anche i nostri.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" aria-label="Sezione Contatti">
-      <div class="container">
-        <h3>Contattaci</h3>
-        <p>
-          Vuoi sapere come possiamo aiutarti a raggiungere i tuoi obiettivi?  
-          Compila il form o scrivici a <a href="mailto:info@nomeagenzia.com">info@nomeagenzia.com</a>.
+    <!-- RUOLO DELLA COMUNICAZIONE -->
+    <section id="ruolo-comunicazione" class="bg-white py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">Il Ruolo della Comunicazione Nella Tua Attività</h2>
+        
+        <p class="text-gray-700 mb-4">
+          La Comunicazione, oltre a contribuire al successo e alla prosperità di un’organizzazione 
+          facendo da collante tra le diverse parti, dà l’opportunità di farsi conoscere e di arrivare 
+          a chi si desidera, trasmettendo ciò che si vuole.
         </p>
         
-        <form action="#" method="POST">
-          <fieldset>
-            <legend>Modulo di contatto</legend>
-            
-            <label for="full-name">Nome Completo:</label>
-            <input type="text" id="full-name" name="full-name" placeholder="Mario Rossi" required />
+        <article class="mb-6">
+          <h3 class="text-lg font-semibold text-blue-600">
+            <i class="fas fa-share-alt text-pink-500 mr-2"></i> Diffondere il tuo verbo
+          </h3>
+          <p class="text-gray-700">
+            Tutto ciò che è comunicazione è per te strumento per affermare agli altri chi sei, che cosa fai, 
+            come lo fai e perché lo fai.  
+            Trasmette la tua immagine e impronta. Dice al mondo perché aderire al tuo progetto.
+          </p>
+        </article>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="esempio@mail.com" required />
+        <article class="mb-6">
+          <h3 class="text-lg font-semibold text-blue-600">
+            <i class="fas fa-check-circle text-green-500 mr-2"></i> Ottenere ciò che cerchi
+          </h3>
+          <p class="text-gray-700">
+            Comunicare efficacemente consente al tuo pubblico desiderato di conoscerti.
+            Arriva ai tuoi obbiettivi e ottieni la facoltà di gestire ed organizzare le cose come lo desideri realmente.
+          </p>
+        </article>
 
-            <label for="phone">Telefono (opzionale):</label>
-            <input type="tel" id="phone" name="phone" placeholder="+39 123 4567890" />
-
-            <label for="message">Messaggio:</label>
-            <textarea id="message" name="message" rows="5" placeholder="Scrivi qui la tua richiesta..." required></textarea>
-
-            <button type="submit">Invia</button>
-          </fieldset>
-        </form>
+        <article>
+          <h3 class="text-lg font-semibold text-blue-600">
+            <i class="fas fa-users text-yellow-500 mr-2"></i> Attrarre clienti e relazioni
+          </h3>
+          <p class="text-gray-700 mb-2">
+            La comunicazione efficace è una colonna portante nell’acquisizione di nuovi clienti e partner.
+            Il modo in cui vieni percepito determina le persone che attrai ed i risultati che ne conseguono.
+          </p>
+          <p class="text-gray-700">
+            Rendere efficace la tua comunicazione ti permette di dire ciò che desideri a chi desideri.
+            Creare i giusti contatti mantiene evoluti ed aggiornati. Come tu puoi comunicare con loro, loro possono 
+            comunicare con te. Per crescere insieme.
+          </p>
+        </article>
       </div>
     </section>
 
-    <!-- (OPZIONALE) MAP SECTION (ad esempio con Google Maps embed) -->
-    <!--
-    <section id="map" aria-label="Mappa della nostra sede">
-      <div class="container">
-        <h3>Dove Siamo</h3>
-        <iframe 
-          src="https://www.google.com/maps/embed?..."
-          width="600"
-          height="450"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!-- TARGET IDEALI -->
+    <section id="target-ideali" class="py-12 bg-blue-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">Target Ideali</h2>
+        
+        <p class="text-gray-700 mb-4">
+          <strong class="text-blue-600">Benefici del scegliere Target Ideali:</strong>
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+          <li>Lavoro più efficace e remunerativo</li>
+          <li>Risparmio Economico</li>
+          <li>Nuovi Contatti più Qualificati</li>
+          <li>Pianificazione e gestione più semplici e funzionali</li>
+        </ul>
+
+        <p class="text-gray-700 mb-3">
+          BeVox offre ai suoi clienti la possibilità di scegliere con precisione il pubblico con il quale comunicare.
+          Possiamo puntare alle persone di una specifica zona di tuo interesse, contattandole direttamente.
+        </p>
+        <p class="text-gray-700 mb-3">
+          Scegliendo il proprio Target ideale si ottimizza il lavoro, riducendo i costi e massimizzando i propri guadagni.
+          Utilizza svariati filtri e profilazioni a tuo vantaggio. Alcuni esempi: Geolocalizzazione, Età, Interessi, Proprietari di Immobili,
+          Aziende e molti altri.
+        </p>
+        <p class="text-gray-700 font-semibold">
+          Scegli cosa dire e a chi dirlo.
+        </p>
       </div>
     </section>
-    -->
+
+    <!-- PRODOTTI E SERVIZI -->
+    <section id="prodotti-servizi" class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">Prodotti e Servizi</h2>
+        
+        <article class="mb-8">
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">
+            <i class="fas fa-phone-square-alt text-pink-500 mr-2"></i>
+            Descrizione prodotti/servizi chiave
+          </h3>
+          <p class="text-gray-700 mb-2">
+            Comunicazione per aziende e chiamate di presentazione e qualificazione, eseguite da team specializzati,
+            con l’obiettivo di promuovere le attività e fissare appuntamenti di valore.
+          </p>
+          <p class="text-gray-700">
+            Comunicazione attraverso canali multipli come: SMS, Whatsapp, Email, Landing Page e Social,
+            con la supervisione e consulenza da parte di esperti del settore per una comunicazione a 360 gradi.
+          </p>
+        </article>
+
+        <article>
+          <h3 class="text-xl font-semibold text-blue-600 mb-2">
+            <i class="fas fa-lightbulb text-orange-500 mr-2"></i>
+            Prodotti/servizi in sviluppo
+          </h3>
+          <p class="text-gray-700">
+            Accrescimento contatti e profilazioni accessibili, consulenze e Strumenti Marketing, formazione e Info prodotti Marketing,
+            comunicazione efficace, crescita personale, affiliazione BeVox “Club” per accedere ai prodotti/servizi dei partner BeVox con offerte vantaggiose,
+            invito anticipato per aderire a tutte le novità.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- STRATEGIE DI PROMOZIONE -->
+    <section id="strategie-promozione" class="bg-blue-50 py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">Strategie di Promozione</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Telefonate Personalizzate -->
+          <article>
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">
+              <i class="fas fa-headset text-pink-500 mr-2"></i> Telefonate Personalizzate
+            </h3>
+            <p class="text-gray-700">
+              Parlare direttamente con le persone rimane il modo più efficace di comunicare e facilita lo sviluppo di un rapporto concreto.
+              Con le chiamate personalizzate BeVox sarà come avere più risorse da te formate, che parlano con i tuoi clienti.
+            </p>
+          </article>
+
+          <!-- Digital Social Media Marketing -->
+          <article>
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">
+              <i class="fab fa-facebook text-blue-500 mr-2"></i> Digital Social Media Marketing
+            </h3>
+            <p class="text-gray-700">
+              Una buona presenza online è ormai prioritaria in ogni progetto di comunicazione.
+              Aiutare le tue telefonate e messaggi con una accattivante pagina web, pagina social, campagne pubblicitarie Facebook, 
+              Instagram, TikTok, YouTube (in base al target) è sempre un’ottima iniziativa.
+            </p>
+          </article>
+
+          <!-- Network -->
+          <article>
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">
+              <i class="fas fa-network-wired text-green-500 mr-2"></i> Network
+            </h3>
+            <p class="text-gray-700 mb-2">
+              Le giuste partnership, oltre ad accrescere la propria credibilità percepita, 
+              posizionano nei giusti contesti, canalizzando o dando accesso alla visibilità cercata.
+            </p>
+            <p class="text-gray-700">
+              BeVox, con l’ecosistema di professionisti e partners che la circondano, incoraggia 
+              la nascita di collaborazioni vitali fra le aziende che mirano al successo.
+            </p>
+          </article>
+
+          <!-- Email Marketing -->
+          <article>
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">
+              <i class="fas fa-envelope text-yellow-500 mr-2"></i> Email Marketing
+            </h3>
+            <p class="text-gray-700">
+              Le mail sono da sempre un canale efficace per mantenere costante l’interazione con i clienti
+              e potenziali tali. Se si ha tanto da dire e poco tempo per farlo, le email sono un formidabile alleato,
+              che non pesa particolarmente sul budget. Dirette e non invasive.
+            </p>
+          </article>
+
+          <!-- SMS/Whatsapp -->
+          <article class="md:col-span-2">
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">
+              <i class="fas fa-comment-dots text-pink-500 mr-2"></i> SMS/Whatsapp
+            </h3>
+            <p class="text-gray-700 mb-2">
+              Messaggi personalizzabili per ogni individuo, facili, veloci ed economici da inviare, gli sms e le app di messaggistica
+              svolgono una funzione portante sia nella comunicazione di tutti i giorni, supportando le telefonate.
+            </p>
+            <p class="text-gray-700">
+              Imbattibili per comodità e versatilità.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIONE / CHIUSURA -->
+    <section id="conclusioni" class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-6">
+          Con l’intento di creare abbondanza e relazioni forti
+        </h2>
+        <p class="text-gray-700 mb-4">
+          BeVox mette a disposizione il suo team e quelli dei suoi partners, per dare l’opportunità ai clienti di costruire un progetto 
+          nella sua interezza, potendo dare supporto ad ogni aspetto riguardante la comunicazione e lo sviluppo clienti.
+        </p>
+        <p class="text-gray-700 mb-4">
+          Telefonate, messaggi, progetti, consulenze marketing e formazioni sono solo alcune delle collaborazioni che possiamo intraprendere insieme.
+        </p>
+        <p class="text-gray-700 mb-4">
+          Il cuore pulsante dell’azienda, oltre alle sue formidabili risorse, sono proprio i professionisti che hanno scelto di collaborare con BeVox,
+          innovando e crescendo assieme.
+        </p>
+        <p class="text-gray-700 mb-4">
+          I consulenti e referenti dedicati sempre presenti, garantiscono una collaborazione efficace e diretta così da svolgere il migliore dei lavori in connessione.
+          Investire in BeVox è investire nella propria azienda e nel proprio lavoro, dando voce alla vostra attività come voi lo desiderate.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti" class="bg-blue-50 py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Grazie per il tempo che ci hai dedicato</h2>
+        <p class="text-lg text-gray-700 font-semibold mb-2">Contattaci</p>
+        <div class="text-gray-700 flex flex-col md:flex-row items-start md:items-center md:justify-between">
+          
+          <!-- Info contatto -->
+          <div class="mb-6 md:mb-0">
+            <p class="mb-1">
+              <strong>Filippo Devia</strong><br>
+              <i class="fas fa-phone-alt mr-1 text-green-500"></i> +39 3382986079<br>
+              <i class="fas fa-envelope mr-1 text-yellow-500"></i>
+              <a href="mailto:info@bevox.info" class="text-blue-600 hover:underline">
+                info@bevox.info
+              </a>
+            </p>
+          </div>
+
+          <!-- Esempio di pulsante CTA contatti (opzionale) -->
+          <a 
+            href="#intro"
+            class="inline-block bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-2 rounded-md hover:opacity-90 transition"
+          >
+            Torna all’inizio
+          </a>
+        </div>
+      </div>
+    </section>
+    
   </main>
 
   <!-- FOOTER -->
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; 2025 Nome Agenzia. Tutti i diritti riservati.</p>
-      <p>
-        Sede Legale: Via Example, 10 - 20100 Milano (MI) - P.IVA 12345678901  
-        | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a>
-      </p>
-      <!-- Social links -->
-      <div class="social-links">
-        <a href="https://facebook.com/agenzia" target="_blank">Facebook</a>
-        <a href="https://instagram.com/agenzia" target="_blank">Instagram</a>
-        <a href="https://linkedin.com/company/agenzia" target="_blank">LinkedIn</a>
-      </div>
+  <footer class="bg-white border-t border-gray-200 py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm text-gray-600">&copy; 2025 BeVox - Tutti i diritti riservati.</p>
     </div>
   </footer>
 
-  <!-- File JS se necessario -->
   <script src="js/main.js"></script>
 </body>
 </html>
